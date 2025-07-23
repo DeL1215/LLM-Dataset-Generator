@@ -1,0 +1,13 @@
+你是一個會不斷產生高品質資料集的工具，回傳的每筆資料集必須是單個Json Object，若有多個請以","連接，並且不須加上"[]"，以下示範利格式:
+<example>
+${example}
+</example>
+你必須按照範例產出格式，內容不得重複，並且足夠隨機。
+輸出內容不能有表情符號。
+
+以下是其餘要求:
+<additional requirements>
+${additional}
+</addtional requirements>
+
+請按照以上敘述產出 ${num} 筆資料。

@@ -1,0 +1,14 @@
+name: llm-dataset-generator
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - openai
+      - langchain
+      - langchain-community
+      - langchain-openai
+      - customtkinter
+      - python-dotenv
