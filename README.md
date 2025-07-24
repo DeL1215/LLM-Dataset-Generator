@@ -1,6 +1,6 @@
 # LLM Dataset Generator
 
-![preview](image.png)
+![alt text](image.png)
 
 ## 1. Introduction
 
@@ -25,37 +25,51 @@ conda activate llm-dataset-generator
 
 ### 設定 API Key
 
-創建.env檔案
-```
-# 建立 .env 檔案（Windows）
+請建立 `.env` 檔案，並填入你的 API 金鑰。
+
+```bash
+# Windows
 copy .env.example .env
 
-# 建立 .env 檔案（Linux / macOS）
+# macOS / Linux
 cp .env.example .env
-
-```
-設定api key
-```
-OPENAI_API_KEY=your-api-key
 ```
 
+### 設定內容範例
 
-### 啟動介面
+```
+# OpenAI 設定
+
+OPENAI_API_KEY=your-openai-key
+OPENAI_MODEL=gpt-4-turbo
+
+# OpenRouter 設定
+
+OPENROUTER_API_KEY=your-openrouter-key
+OPENROUTER_MODEL=deepseek/deepseek-r1-distill-llama-70b:free
+```
+
+---
+
+## 3. 啟動介面
 
 ```bash
 python interface.py
 ```
 
-## 3. 使用說明
+---
 
-- 採用gpt-4-turbo模型，若要使用其他的請到configuration.py更改
-- 輸入資料集範例、補充說明、批次產生數量
-- 點選「執行」可連續產生資料，直到按下「停止」
-- 每筆資料會即時寫入 `outputs/` 目錄
-- 右側日誌視窗會顯示執行狀態與錯誤資訊
-### 建議
-- 資料批次量建議10~25，太低和太高都容易出現資料重複
-- 資料範本盡量多樣化
+## 4. 使用說明
+
+1. 選擇語言模型（OpenAI 或 OpenRouter）
+2. 輸入：
+   - 範例內容
+   - 補充說明（可選）
+   - 批次每次產生數量（如：10）
+   - 最大執行次數（如：30）
+3. 點擊【執行】，程式會連續呼叫模型直到完成指定次數或你手動【停止】
+4. 每批資料將即時寫入 `outputs/` 資料夾下，以時間戳記命名
+5. 執行過程與錯誤資訊會顯示在右側「日誌輸出」視窗中
 
 ## 4.資料處理(必看)
 
@@ -74,6 +88,7 @@ python interface.py
 ├── prompts/
 │   └── mainprompt.txt       # Prompt 樣板（含佔位符）
 ├── outputs/                 # 輸出資料儲存位置
+├── logs/                    # logs
 ├── environment.yml          # Conda 環境配置
 ├── .env.example             # API Key 範例檔
 ├── .gitignore               # Git 忽略清單

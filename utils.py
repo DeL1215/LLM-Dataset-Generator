@@ -6,3 +6,5 @@ def load_prompt(file_path: str, replacements: dict) -> str:
         prompt = prompt.replace(f"${{{key}}}", str(value))  # 正確格式為 ${key}
     
     return prompt
+
+
