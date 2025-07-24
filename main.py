@@ -35,8 +35,8 @@ def generate_and_stream(example: str, addtional: str, num: int) -> int:
 
     prompt_text = load_prompt("prompts/mainprompt.txt", replacements)
     messages = [
-        SystemMessage(content="你是一個資料生成助手"),
-        HumanMessage(content=prompt_text)
+        SystemMessage(content=prompt_text),
+        HumanMessage(content="產生指定數量資料")
     ]
 
     # 調用 LLM
